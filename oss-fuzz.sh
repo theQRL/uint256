@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
 # This sets the -coverpgk for the coverage report when the corpus is executed through go test
-coverpkg="github.com/holiman/uint256/..."
+coverpkg="github.com/theQRL/uint256/..."
 
 (cd /src/ && git clone https://github.com/holiman/gofuzz-shim.git )
 
@@ -72,8 +72,8 @@ function compile_fuzzer() {
 go install github.com/holiman/gofuzz-shim@latest
 
 
-compile_fuzzer github.com/holiman/uint256  FuzzUnaryOperations fuzzUnary $repo/unary_test.go,$repo/shared_test.go
-compile_fuzzer github.com/holiman/uint256  FuzzBinaryOperations fuzzBinary $repo/binary_test.go,$repo/shared_test.go
-compile_fuzzer github.com/holiman/uint256  FuzzCompareOperations fuzzCompare $repo/binary_test.go,$repo/shared_test.go
-compile_fuzzer github.com/holiman/uint256  FuzzTernaryOperations fuzzTernary $repo/ternary_test.go,$repo/shared_test.go
-compile_fuzzer github.com/holiman/uint256  FuzzSetString fuzzSetString $repo/conversion_fuzz_test.go,$repo/shared_test.go
+compile_fuzzer github.com/theQRL/uint256  FuzzUnaryOperations fuzzUnary $repo/unary_test.go,$repo/shared_test.go
+compile_fuzzer github.com/theQRL/uint256  FuzzBinaryOperations fuzzBinary $repo/binary_test.go,$repo/shared_test.go
+compile_fuzzer github.com/theQRL/uint256  FuzzCompareOperations fuzzCompare $repo/binary_test.go,$repo/shared_test.go
+compile_fuzzer github.com/theQRL/uint256  FuzzTernaryOperations fuzzTernary $repo/ternary_test.go,$repo/shared_test.go
+compile_fuzzer github.com/theQRL/uint256  FuzzSetString fuzzSetString $repo/conversion_fuzz_test.go,$repo/shared_test.go
